@@ -1,0 +1,17 @@
+{
+    "_output_dir": "/home/sgraaf/Documents/Git",
+    "_template": "cookiecutter-python-package",
+    "author": "Steven van de Graaf",
+    "copyright_year": "2022",
+    "description": "Demo of https://github.com/sgraaf/cookiecutter-python-package",
+    "development_status": "Development Status :: 4 - Beta",
+    "email": "steven@vandegraaf.xyz",
+    "friendly_name": "Cookiecutter Python Package Demo",
+    "github_username": "sgraaf",
+    "init_git": "True",
+    "init_venv": "False",
+    "license": "MIT",
+    "package_name": "cookiecutter_python_package_demo",
+    "project_name": "cookiecutter-python-package-demo",
+    "version": "0.1.0"
+}
