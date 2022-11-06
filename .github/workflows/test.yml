@@ -5,7 +5,7 @@ on:
   - pull_request
 
 permissions:
-  contents: readd
+  contents: read
 
 jobs:
   test:
