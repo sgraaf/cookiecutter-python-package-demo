@@ -2,7 +2,7 @@
     "_output_dir": "/home/runner/work/cookiecutter-python-package/cookiecutter-python-package",
     "_template": "cookiecutter-python-package",
     "author": "Steven van de Graaf",
-    "copyright_year": "2022",
+    "copyright_year": "2023",
     "description": "Demo of https://github.com/sgraaf/cookiecutter-python-package",
     "development_status": "Development Status :: 4 - Beta",
     "email": "steven@vandegraaf.xyz",
