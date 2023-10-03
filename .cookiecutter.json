@@ -1,4 +1,5 @@
 {
+    "_checkout": null,
     "_output_dir": "/home/runner/work/cookiecutter-python-package/cookiecutter-python-package",
     "_repo_dir": "cookiecutter-python-package",
     "_template": "cookiecutter-python-package",
