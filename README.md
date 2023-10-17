@@ -9,7 +9,7 @@
 [![Documentation Status](https://readthedocs.org/projects/cookiecutter-python-package-demo/badge/?version=latest)](https://cookiecutter-python-package-demo.readthedocs.io/en/latest/?badge=latest)
 [![PyPI - License](https://img.shields.io/pypi/l/cookiecutter-python-package-demo)](https://img.shields.io/pypi/l/cookiecutter-python-package-demo)
 
-Demo of https://github.com/sgraaf/cookiecutter-python-package
+Demo of https://github.com/sgraaf/cookiecutter-python-package.
 
 <!-- end docs-include-index -->
 
