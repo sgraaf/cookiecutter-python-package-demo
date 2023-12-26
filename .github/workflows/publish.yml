@@ -2,7 +2,8 @@ name: Publish Python Package
 
 on:
   release:
-    types: [created]
+    types:
+      - published
 
 jobs:
   publish:
@@ -11,24 +12,14 @@ jobs:
       - name: Checkout the repo
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
+      - name: Install Python
+        uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
+          python-version: "3.12"
           cache: pip
-          cache-dependency-path: pyproject.toml
-
-      - name: Install Flit
-        run: |
-          python -m pip install flit
-
-      - name: Install Dependencies
-        run: |
-          python -m flit install --deps production
 
       - name: Publish to PyPI
         env:
           FLIT_USERNAME: __token__
           FLIT_PASSWORD: ${{ secrets.PYPI_TOKEN }}
-        run: |
-          python -m flit publish
+        run: pipx run flit publish

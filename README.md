@@ -44,4 +44,8 @@ Check out the [Cookiecutter Python Package Demo documentation](https://cookiecut
 
 ## Usage
 
+<!-- start docs-include-usage -->
+
 Usage instructions go here.
+
+<!-- end docs-include-usage -->
