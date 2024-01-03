@@ -4,7 +4,7 @@
     "_repo_dir": "cookiecutter-python-package",
     "_template": "cookiecutter-python-package",
     "author": "Steven van de Graaf",
-    "copyright_year": "2023",
+    "copyright_year": "2024",
     "development_status": "Development Status :: 4 - Beta",
     "email": "steven@vandegraaf.xyz",
     "friendly_name": "Cookiecutter Python Package Demo",
