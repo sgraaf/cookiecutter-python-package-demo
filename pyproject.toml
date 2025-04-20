@@ -1,9 +1,10 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "cookiecutter-python-package-demo"
+description = "Demo of https://github.com/sgraaf/cookiecutter-python-package."
 authors = [{name = "Steven van de Graaf", email = "steven@vandegraaf.xyz"}]
 readme = "README.md"
 license = {file = "LICENSE"}
@@ -13,17 +14,17 @@ classifiers = [
     "License :: OSI Approved :: MIT License",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3 :: Only",
     "Typing :: Typed",
 ]
-requires-python = "~=3.8"
+requires-python = "~=3.9"
 dependencies = []
-dynamic = ["version", "description"]
+dynamic = ["version"]
 
 [project.optional-dependencies]
 tests = [
@@ -47,13 +48,14 @@ Changelog = "https://cookiecutter-python-package-demo.readthedocs.io/en/stable/c
 "Source Code" = "https://github.com/sgraaf/cookiecutter-python-package-demo"
 "Issue Tracker" = "https://github.com/sgraaf/cookiecutter-python-package-demo/issues"
 
+[tool.setuptools.dynamic]
+version = {attr = "cookiecutter_python_package_demo.__version__"}
+
 [tool.ruff]
 lint.select = ["ALL"]
 lint.ignore = [
     "E501",  # line too long (pycodestyle), handled by ruff-format
     "ANN003",  # missing-type-kwargs (flake8-annotations)
-    "ANN101",  # missing-type-self (flake8-annotations)
-    "ANN102",  # missing-type-cls (flake8-annotations)
     "ANN401",  # any-type (flake8-annotations)
     "COM",  # flake8-commas, handled by ruff-format
     "CPY",  # flake8-copyright
@@ -61,7 +63,7 @@ lint.ignore = [
     "INP",  # flake8-no-pep420
 ]
 src = ["src", "tests", "docs"]
-target-version = "py38"  # the minimum Python version supported, used by pyupgrade
+target-version = "py39"  # the minimum Python version supported, used by pyupgrade
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = [

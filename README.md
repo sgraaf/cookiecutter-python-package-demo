@@ -17,23 +17,10 @@ Demo of https://github.com/sgraaf/cookiecutter-python-package.
 
 <!-- start docs-include-installation -->
 
-### From PyPI
+Cookiecutter Python Package Demo is available on [PyPI](https://pypi.org/project/cookiecutter-python-package-demo/). Install with [uv](https://docs.astral.sh/uv/) or your package manager of choice:
 
-Cookiecutter Python Package Demo is available on [PyPI](https://pypi.org/project/cookiecutter-python-package-demo/). Install with `pip` or your package manager of choice:
-
-```bash
-pip install cookiecutter-python-package-demo
-```
-
-### From source
-
-If you'd like, you can also install Cookiecutter Python Package Demo from source (with [`flit`](https://flit.readthedocs.io/en/latest/)):
-
-```bash
-git clone https://github.com/sgraaf/cookiecutter-python-package-demo.git
-cd cookiecutter-python-package-demo
-python3 -m pip install flit
-flit install
+```sh
+uv pip install cookiecutter-python-package-demo
 ```
 
 <!-- end docs-include-installation -->
