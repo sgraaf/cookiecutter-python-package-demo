@@ -4,16 +4,15 @@
     "_repo_dir": "cookiecutter-python-package",
     "_template": "cookiecutter-python-package",
     "author": "Steven van de Graaf",
-    "copyright_year": "2025",
+    "copyright_year": "2026",
     "development_status": "Development Status :: 4 - Beta",
     "email": "steven@vandegraaf.xyz",
-    "friendly_name": "Cookiecutter Python Package Demo",
+    "friendly_name": "cookiecutter-python-package-demo",
     "github_username": "sgraaf",
     "init_git": false,
-    "init_venv": false,
-    "license": "mit",
+    "license": "agpl-3.0",
     "package_name": "cookiecutter_python_package_demo",
     "project_name": "cookiecutter-python-package-demo",
     "short_description": "Demo of https://github.com/sgraaf/cookiecutter-python-package.",
-    "version": "0.1.0"
+    "version": "2026.1.0"
 }

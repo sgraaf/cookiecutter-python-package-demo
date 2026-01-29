@@ -1,9 +1,10 @@
 [build-system]
-requires = ["setuptools"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build>=0.9.11,<0.10.0"]
+build-backend = "uv_build"
 
 [project]
 name = "cookiecutter-python-package-demo"
+version = "2026.1.0"
 description = "Demo of https://github.com/sgraaf/cookiecutter-python-package."
 authors = [{name = "Steven van de Graaf", email = "steven@vandegraaf.xyz"}]
 readme = "README.md"
@@ -11,25 +12,20 @@ license = {file = "LICENSE"}
 keywords = []
 classifiers = [
     "Development Status :: 4 - Beta",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved :: GNU Affero General Public License v3",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
-    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.14",
     "Typing :: Typed",
 ]
-requires-python = "~=3.9"
+requires-python = ">=3.10, <4"
 dependencies = []
-dynamic = ["version"]
 
-[project.optional-dependencies]
-tests = [
-    "pytest",
-]
+[dependency-groups]
 docs = [
     "furo",
     "myst-parser",
@@ -38,8 +34,20 @@ docs = [
     "sphinx-copybutton",
     "sphinxext-opengraph",
 ]
+tests = [
+    "pytest",
+    "pytest-cov",
+]
+typing = [
+    "mypy",
+    "pyrefly",
+    "ty",
+]
 dev = [
-    "cookiecutter-python-package-demo[tests,docs]",
+    { include-group = "docs" },
+    { include-group = "tests" },
+    { include-group = "typing" },
+    "prek",
 ]
 
 [project.urls]
@@ -48,48 +56,34 @@ Changelog = "https://cookiecutter-python-package-demo.readthedocs.io/en/stable/c
 "Source Code" = "https://github.com/sgraaf/cookiecutter-python-package-demo"
 "Issue Tracker" = "https://github.com/sgraaf/cookiecutter-python-package-demo/issues"
 
-[tool.setuptools.dynamic]
-version = {attr = "cookiecutter_python_package_demo.__version__"}
-
-[tool.ruff]
-lint.select = ["ALL"]
-lint.ignore = [
-    "E501",  # line too long (pycodestyle), handled by ruff-format
-    "ANN003",  # missing-type-kwargs (flake8-annotations)
-    "ANN401",  # any-type (flake8-annotations)
-    "COM",  # flake8-commas, handled by ruff-format
-    "CPY",  # flake8-copyright
-    "ISC001",  # single-line-implicit-string-concatenation (flake8-implicit-str-concat)
-    "INP",  # flake8-no-pep420
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",  # missing-trailing-comma (flake8-commas), handled by the formatter
+    "D102",  # undocumented-public-method (pydocstyle)
+    "D105",  # undocumented-magic-method (pydocstyle)
+    "D107",  # undocumented-public-init (pydocstyle)
+    "E501",  # line-too-long (pycodestyle), handled by the formatter
+    "PLC2401",  # non-ascii-name (Pylint)
+    "S101",   # assert (flake8-bandit)
+    "S314",  # suspicious-xml-element-tree-usage (flake8-bandit)
+    "SLF001",  # private-member-access (flake8-self)
 ]
-src = ["src", "tests", "docs"]
-target-version = "py39"  # the minimum Python version supported, used by pyupgrade
+pydocstyle.convention = "google"
 
 [tool.ruff.lint.per-file-ignores]
 "__init__.py" = [
     "F401",  # unused-import (Pyflakes)
 ]
+"docs/conf.py" = [
+    "INP001",  # implicit-namespace-package (flake8-no-pep420)
+]
 "tests/**/test_*.py" = [
     "D",  # pydocstyle
-    "ANN201",  # missing-return-type-undocumented-public-function (flake8-annotations)
+    "PLR2004",   # magic-value-comparison (Pylint)
     "S101",   # assert (flake8-bandit)
     "SIM300",   # yoda-conditions (flake8-simplify)
-    "PLR2004",   # magic-value-comparison (Pylint)
-]
-"docs/conf.py" = [
-    "A001",  # builtin-variable-shadowing (flake8-builtins)
-]
-"noxfile.py" = [
-    "D100",  # undocumented-public-module (pydocstyle)
-    "ERA001",  # commented-out-code (eradicate)
 ]
 
-[tool.ruff.lint.isort]
-known-first-party = [
-  "cookiecutter-python-package-demo",
-  "tests",
-]
-lines-between-types = 0
-
-[tool.ruff.lint.pydocstyle]
-convention = "google"
+[tool.mypy]
+python_version = "3.10"
