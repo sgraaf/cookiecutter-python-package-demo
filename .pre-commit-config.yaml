@@ -4,24 +4,23 @@ repos:
     hooks:
       - id: check-json
       - id: check-toml
-      - id: check-xml
         exclude: ^tests/fixtures/invalid/
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/abravalheri/validate-pyproject
-    rev: v0.24.1
+    rev: v0.25
     hooks:
       - id: validate-pyproject
         additional_dependencies: ["validate-pyproject-schema-store[all]"]
   - repo: https://github.com/python-jsonschema/check-jsonschema
-    rev: 0.36.1
+    rev: 0.37.2
     hooks:
       - id: check-dependabot
       - id: check-github-workflows
       - id: check-readthedocs
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.14.14
+    rev: v0.15.13
     hooks:
       - id: ruff-check
         args:
@@ -30,13 +29,13 @@ repos:
           - --show-fixes
       - id: ruff-format
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v1.19.1
+    rev: v2.1.0
     hooks:
       - id: mypy
         entry: uv run mypy
         language: system
   - repo: https://github.com/facebook/pyrefly-pre-commit
-    rev: 0.50.1
+    rev: 1.0.0
     hooks:
       - id: pyrefly-check
         entry: uv run pyrefly check
@@ -53,7 +52,7 @@ repos:
         description: "Run 'ty check' for extremely fast Python type checking."
         stages: [pre-commit, pre-merge-commit, pre-push, manual]
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.4.1
+    rev: v2.4.2
     hooks:
       - id: codespell
   - repo: https://github.com/hukkin/mdformat
@@ -64,7 +63,7 @@ repos:
           - mdformat-myst
           - mdformat-ruff
   - repo: https://github.com/rbubley/mirrors-prettier
-    rev: v3.8.1
+    rev: v3.8.3
     hooks:
       - id: prettier
         types: [yaml]
