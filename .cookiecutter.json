@@ -1,6 +1,6 @@
 {
     "_checkout": null,
-    "_output_dir": "/Users/sgraaf/Git",
+    "_output_dir": "/home/runner/work/cookiecutter-python-package/cookiecutter-python-package",
     "_repo_dir": "cookiecutter-python-package",
     "_template": "cookiecutter-python-package",
     "author": "Steven van de Graaf",
@@ -10,7 +10,7 @@
     "friendly_name": "cookiecutter-python-package-demo",
     "github_username": "sgraaf",
     "init_git": false,
-    "license": "mit",
+    "license": "MIT",
     "min_python_version": "3.10",
     "package_name": "cookiecutter_python_package_demo",
     "project_name": "cookiecutter-python-package-demo",
